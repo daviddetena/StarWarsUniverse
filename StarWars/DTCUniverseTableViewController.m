@@ -94,11 +94,10 @@
     // Check current character
     DTCStarWarsCharacter *character = [self characterAtIndexPath:indexPath];
     
-    // Create controller
-    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:character];
-    
-    // Push controller
-    [self.navigationController pushViewController:characterVC animated:YES];
+    // Notify the delegate the model has changed (only if the delegate understands the message [implements it])
+    if([self.delegate respondsToSelector:@selector(universeTableViewController:didSelectBook:)]){
+        [self.delegate universeTableViewController:self didSelectBook:character];
+    }
 }
 
 

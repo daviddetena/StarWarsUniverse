@@ -41,6 +41,7 @@
     
     // Set delegates
     splitVC.delegate = characterVC;
+    universeVC.delegate = characterVC;
         
     // Set controller as the root VC
     self.window.rootViewController = splitVC;

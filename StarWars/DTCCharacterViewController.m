@@ -21,7 +21,6 @@
                               bundle:nil]){
         _model = aModel;
         // We must use self.title instead of _title because of restrictions
-        self.title = aModel.alias;
         self.tabBarItem.image = aModel.icon;
     }
     return self;
@@ -30,9 +29,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    // Make sure the view not to use the whole screen when embeded in combinators
+    // Make sure the view not to use the whole screen when embeded in combiners
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     [self syncModelWithView];
 }
 
@@ -44,6 +42,7 @@
 #pragma mark - Utils
 - (void) syncModelWithView{
     self.photoView.image = self.model.photo;
+    self.title = self.model.alias;
 }
 
 #pragma mark - Actions
@@ -74,6 +73,13 @@
         // Table visible => Hide split button
         self.navigationItem.leftBarButtonItem = nil;
     }
+}
+
+#pragma mark - DTCUniverseTableViewControllerDelegate
+- (void) universeTableViewController:(DTCUniverseTableViewController *)universe
+                       didSelectBook:(DTCStarWarsCharacter *)character{
+    self.model = character;
+    [self syncModelWithView];
 }
 
 @end

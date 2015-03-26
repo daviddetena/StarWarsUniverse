@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "DTCStarWarsCharacter.h"
 #import "DTCAudioPlayer.h"
+#import "DTCUniverseTableViewController.h"
 
-@interface DTCCharacterViewController : UIViewController<UISplitViewControllerDelegate>
+@interface DTCCharacterViewController : UIViewController<UISplitViewControllerDelegate, DTCUniverseTableViewControllerDelegate>
 
 #pragma mark - Properties
 @property (weak,nonatomic) IBOutlet UIImageView *photoView;
