@@ -27,6 +27,8 @@
 		5990312D1AC407380088A43A /* vader.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5990311D1AC407380088A43A /* vader.caf */; };
 		5990312E1AC407380088A43A /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5990311E1AC407380088A43A /* yoda.caf */; };
 		599031361AC40E5F0088A43A /* DTCAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 599031351AC40E5F0088A43A /* DTCAudioPlayer.m */; };
+		5990313A1AC417660088A43A /* DTCWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599031381AC417660088A43A /* DTCWikiViewController.m */; };
+		5990313B1AC417660088A43A /* DTCWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599031391AC417660088A43A /* DTCWikiViewController.xib */; };
 		59A449C11AC2041100330D54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A449C01AC2041100330D54 /* main.m */; };
 		59A449C41AC2041100330D54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A449C31AC2041100330D54 /* AppDelegate.m */; };
 		59A449C61AC2041100330D54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A449C51AC2041100330D54 /* Images.xcassets */; };
@@ -68,6 +70,9 @@
 		5990311E1AC407380088A43A /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
 		599031341AC40E5F0088A43A /* DTCAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCAudioPlayer.h; sourceTree = "<group>"; };
 		599031351AC40E5F0088A43A /* DTCAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCAudioPlayer.m; sourceTree = "<group>"; };
+		599031371AC417660088A43A /* DTCWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCWikiViewController.h; sourceTree = "<group>"; };
+		599031381AC417660088A43A /* DTCWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCWikiViewController.m; sourceTree = "<group>"; };
+		599031391AC417660088A43A /* DTCWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCWikiViewController.xib; sourceTree = "<group>"; };
 		59A449BB1AC2041100330D54 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A449BF1AC2041100330D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A449C01AC2041100330D54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +118,9 @@
 				599031091AC3FED80088A43A /* DTCCharacterViewController.h */,
 				5990310A1AC3FED80088A43A /* DTCCharacterViewController.m */,
 				5990310B1AC3FED80088A43A /* DTCCharacterViewController.xib */,
+				599031371AC417660088A43A /* DTCWikiViewController.h */,
+				599031381AC417660088A43A /* DTCWikiViewController.m */,
+				599031391AC417660088A43A /* DTCWikiViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 				599031251AC407380088A43A /* R2-D2.jpg in Resources */,
 				599031291AC407380088A43A /* chewbacca.caf in Resources */,
 				599031221AC407380088A43A /* icon.png in Resources */,
+				5990313B1AC417660088A43A /* DTCWikiViewController.xib in Resources */,
 				599031261AC407380088A43A /* tarkin.jpg in Resources */,
 				599031271AC407380088A43A /* yoda.jpg in Resources */,
 				5990312C1AC407380088A43A /* tarkin.caf in Resources */,
@@ -327,6 +336,7 @@
 			files = (
 				59A449C41AC2041100330D54 /* AppDelegate.m in Sources */,
 				599031071AC3FB8B0088A43A /* DTCStarWarsCharacter.m in Sources */,
+				5990313A1AC417660088A43A /* DTCWikiViewController.m in Sources */,
 				599031361AC40E5F0088A43A /* DTCAudioPlayer.m in Sources */,
 				5990310C1AC3FED80088A43A /* DTCCharacterViewController.m in Sources */,
 				59A449C11AC2041100330D54 /* main.m in Sources */,

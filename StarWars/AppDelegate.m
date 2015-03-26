@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DTCStarWarsCharacter.h"
 #import "DTCCharacterViewController.h"
+#import "DTCWikiViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,11 +30,11 @@
     DTCStarWarsCharacter *model = [[DTCStarWarsCharacter alloc]initWithName:@"Anakin Skywalker" alias:@"Darth Vader" url:vaderURL soundData:vaderSound photo:vaderImage];
     
     // Create the controller
-    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:model];
-    
+    //DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:model];
+    DTCWikiViewController *wikiVC = [[DTCWikiViewController alloc]initWithModel:model];
     
     // Set controller as the root VC
-    self.window.rootViewController = characterVC;
+    self.window.rootViewController = wikiVC;
     
     
     // Override point for customization after application launch.
