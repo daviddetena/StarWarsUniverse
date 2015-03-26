@@ -29,6 +29,7 @@
 		599031361AC40E5F0088A43A /* DTCAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 599031351AC40E5F0088A43A /* DTCAudioPlayer.m */; };
 		5990313A1AC417660088A43A /* DTCWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599031381AC417660088A43A /* DTCWikiViewController.m */; };
 		5990313B1AC417660088A43A /* DTCWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599031391AC417660088A43A /* DTCWikiViewController.xib */; };
+		599F2DAA1AC499670071A0F4 /* DTCUniverseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F2DA91AC499670071A0F4 /* DTCUniverseTableViewController.m */; };
 		59A449C11AC2041100330D54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A449C01AC2041100330D54 /* main.m */; };
 		59A449C41AC2041100330D54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A449C31AC2041100330D54 /* AppDelegate.m */; };
 		59A449C61AC2041100330D54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A449C51AC2041100330D54 /* Images.xcassets */; };
@@ -84,6 +85,8 @@
 		599031371AC417660088A43A /* DTCWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCWikiViewController.h; sourceTree = "<group>"; };
 		599031381AC417660088A43A /* DTCWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCWikiViewController.m; sourceTree = "<group>"; };
 		599031391AC417660088A43A /* DTCWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCWikiViewController.xib; sourceTree = "<group>"; };
+		599F2DA81AC499670071A0F4 /* DTCUniverseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCUniverseTableViewController.h; sourceTree = "<group>"; };
+		599F2DA91AC499670071A0F4 /* DTCUniverseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCUniverseTableViewController.m; sourceTree = "<group>"; };
 		59A449BB1AC2041100330D54 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A449BF1AC2041100330D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A449C01AC2041100330D54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				599031371AC417660088A43A /* DTCWikiViewController.h */,
 				599031381AC417660088A43A /* DTCWikiViewController.m */,
 				599031391AC417660088A43A /* DTCWikiViewController.xib */,
+				599F2DA81AC499670071A0F4 /* DTCUniverseTableViewController.h */,
+				599F2DA91AC499670071A0F4 /* DTCUniverseTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				599031071AC3FB8B0088A43A /* DTCStarWarsCharacter.m in Sources */,
 				59A5FBCA1AC4516500346940 /* DTCStarWarsUniverse.m in Sources */,
 				5990313A1AC417660088A43A /* DTCWikiViewController.m in Sources */,
+				599F2DAA1AC499670071A0F4 /* DTCUniverseTableViewController.m in Sources */,
 				599031361AC40E5F0088A43A /* DTCAudioPlayer.m in Sources */,
 				5990310C1AC3FED80088A43A /* DTCCharacterViewController.m in Sources */,
 				59A449C11AC2041100330D54 /* main.m in Sources */,

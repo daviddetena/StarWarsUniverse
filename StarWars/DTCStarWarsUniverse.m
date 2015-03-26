@@ -22,7 +22,7 @@
     return [self.rebels count];
 }
 
-- (NSUInteger) imperialsCount{
+- (NSUInteger) imperialCount{
     return [self.imperials count];
 }
 
@@ -117,9 +117,8 @@
                                       photo:r2d2Image
                                       icon:r2d2Icon];
         
-        self.imperials = @[vader,tarkin,palpatine];
+        self.imperials = @[vader,palpatine,tarkin];
         self.rebels = @[chewie,c3po,yoda,r2d2];
-
     }
     return self;
 }
@@ -129,7 +128,7 @@
 }
 
 - (DTCStarWarsCharacter *) imperialAtIndex:(NSUInteger) index{
-    return [self.rebels objectAtIndex:index];
+    return [self.imperials objectAtIndex:index];
 }
 
 @end
