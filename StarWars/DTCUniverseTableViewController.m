@@ -98,6 +98,8 @@
     if([self.delegate respondsToSelector:@selector(universeTableViewController:didSelectBook:)]){
         [self.delegate universeTableViewController:self didSelectBook:character];
     }
+    
+    // Need notifications to tell the WikiVC the model has changed
 }
 
 

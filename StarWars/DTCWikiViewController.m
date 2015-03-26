@@ -32,9 +32,16 @@
     // Make sure the view not to use the whole screen when embeded in combinators
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    // Subscribe to the Notification Center
+    
     // Set delegate of browser
     self.browser.delegate = self;
     [self syncWithView];
+}
+
+
+- (void) viewWillDisappear:(BOOL)animated{
+    // Unsuscribe from the Notification Center
 }
 
 - (void)didReceiveMemoryWarning {
