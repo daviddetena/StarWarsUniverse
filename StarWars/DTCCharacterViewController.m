@@ -60,4 +60,20 @@
     [self.navigationController pushViewController:wikiVC animated:YES];
 }
 
+#pragma mark - UISplitViewControllerDelegate
+- (void) splitViewController:(UISplitViewController *)svc
+     willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
+
+    // Find out if the table is visible
+    
+    if (displayMode==UISplitViewControllerDisplayModePrimaryHidden) {
+        // Table hidden => show button on the navigation
+        self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
+    }
+    else{
+        // Table visible => Hide split button
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+}
+
 @end

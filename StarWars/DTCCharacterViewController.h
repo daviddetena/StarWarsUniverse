@@ -10,7 +10,7 @@
 #import "DTCStarWarsCharacter.h"
 #import "DTCAudioPlayer.h"
 
-@interface DTCCharacterViewController : UIViewController
+@interface DTCCharacterViewController : UIViewController<UISplitViewControllerDelegate>
 
 #pragma mark - Properties
 @property (weak,nonatomic) IBOutlet UIImageView *photoView;

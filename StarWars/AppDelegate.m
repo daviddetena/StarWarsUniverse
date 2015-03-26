@@ -24,17 +24,26 @@
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // Create the model
+    // Create the models
     DTCStarWarsUniverse *universe = [[DTCStarWarsUniverse alloc]init];
     
-    // Create the controller
+    // Create the controllers
     DTCUniverseTableViewController *universeVC = [[DTCUniverseTableViewController alloc]initWithModel:universe style:UITableViewStylePlain];
     
-    // Create the combiner
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:universeVC];
+    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:[universeVC.model imperialAtIndex:0]];
     
+    // Create the combiners
+    UINavigationController *universeNav = [[UINavigationController alloc]initWithRootViewController:universeVC];
+    UINavigationController *characterNav = [[UINavigationController alloc]initWithRootViewController:characterVC];
+    
+    UISplitViewController *splitVC = [[UISplitViewController alloc]init];
+    splitVC.viewControllers = @[universeNav,characterNav];
+    
+    // Set delegates
+    splitVC.delegate = characterVC;
+        
     // Set controller as the root VC
-    self.window.rootViewController = nav;
+    self.window.rootViewController = splitVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];
