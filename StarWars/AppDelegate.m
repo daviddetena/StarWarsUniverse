@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DTCStarWarsCharacter.h"
+#import "DTCCharacterViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc]
+                   initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Create the model
+    NSURL *vaderURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Darth_Vader"];
+    NSBundle *b = [NSBundle mainBundle];
+    NSData *vaderSound = [NSData dataWithContentsOfURL:[b URLForResource:@"vader" withExtension:@"caf"]];
+    UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
+    DTCStarWarsCharacter *model = [[DTCStarWarsCharacter alloc]initWithName:@"Anakin Skywalker" alias:@"Darth Vader" url:vaderURL soundData:vaderSound photo:vaderImage];
+    
+    // Create the controller
+    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:model];
+    
+    
+    // Set controller as the root VC
+    self.window.rootViewController = characterVC;
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
