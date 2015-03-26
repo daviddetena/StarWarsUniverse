@@ -19,7 +19,11 @@
                     <rect key="frame" x="0.0" y="980" width="768" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <barButtonItem systemItem="play" id="PVG-mw-Mw0"/>
+                        <barButtonItem systemItem="play" id="PVG-mw-Mw0">
+                            <connections>
+                                <action selector="playSound:" destination="-1" id="LeM-UL-PXh"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="VSJ-rk-w3H">

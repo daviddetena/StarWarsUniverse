@@ -40,7 +40,9 @@
 
 #pragma mark - Actions
 - (IBAction)playSound:(id)sender{
-
+    // Play the sound of the model
+    self.player = [DTCAudioPlayer audioPlayer];
+    [self.player playSoundData:self.model.soundData];
 }
 
 @end

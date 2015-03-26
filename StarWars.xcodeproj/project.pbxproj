@@ -26,6 +26,7 @@
 		5990312C1AC407380088A43A /* tarkin.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5990311C1AC407380088A43A /* tarkin.caf */; };
 		5990312D1AC407380088A43A /* vader.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5990311D1AC407380088A43A /* vader.caf */; };
 		5990312E1AC407380088A43A /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5990311E1AC407380088A43A /* yoda.caf */; };
+		599031361AC40E5F0088A43A /* DTCAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 599031351AC40E5F0088A43A /* DTCAudioPlayer.m */; };
 		59A449C11AC2041100330D54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A449C01AC2041100330D54 /* main.m */; };
 		59A449C41AC2041100330D54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A449C31AC2041100330D54 /* AppDelegate.m */; };
 		59A449C61AC2041100330D54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A449C51AC2041100330D54 /* Images.xcassets */; };
@@ -65,6 +66,8 @@
 		5990311C1AC407380088A43A /* tarkin.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tarkin.caf; sourceTree = "<group>"; };
 		5990311D1AC407380088A43A /* vader.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = vader.caf; sourceTree = "<group>"; };
 		5990311E1AC407380088A43A /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
+		599031341AC40E5F0088A43A /* DTCAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCAudioPlayer.h; sourceTree = "<group>"; };
+		599031351AC40E5F0088A43A /* DTCAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCAudioPlayer.m; sourceTree = "<group>"; };
 		59A449BB1AC2041100330D54 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A449BF1AC2041100330D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A449C01AC2041100330D54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +140,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		599031331AC40C1D0088A43A /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				599031341AC40E5F0088A43A /* DTCAudioPlayer.h */,
+				599031351AC40E5F0088A43A /* DTCAudioPlayer.m */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
 		59A449B21AC2041100330D54 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +170,7 @@
 		59A449BD1AC2041100330D54 /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
+				599031331AC40C1D0088A43A /* Sound */,
 				5990312F1AC4075D0088A43A /* Resources */,
 				5990310E1AC3FEE10088A43A /* Controllers */,
 				599031081AC3FB910088A43A /* Models */,
@@ -314,6 +327,7 @@
 			files = (
 				59A449C41AC2041100330D54 /* AppDelegate.m in Sources */,
 				599031071AC3FB8B0088A43A /* DTCStarWarsCharacter.m in Sources */,
+				599031361AC40E5F0088A43A /* DTCAudioPlayer.m in Sources */,
 				5990310C1AC3FED80088A43A /* DTCCharacterViewController.m in Sources */,
 				59A449C11AC2041100330D54 /* main.m in Sources */,
 			);
