@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StarWars/DTCCharacterViewController.m"
-            timestampString = "449058300.719775"
+            timestampString = "449062231.723376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-playSound:"
             landmarkType = "5">
          </BreakpointContent>

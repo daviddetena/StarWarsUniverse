@@ -29,12 +29,17 @@
     UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
     DTCStarWarsCharacter *model = [[DTCStarWarsCharacter alloc]initWithName:@"Anakin Skywalker" alias:@"Darth Vader" url:vaderURL soundData:vaderSound photo:vaderImage];
     
-    // Create the controller
-    //DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:model];
+    // Create the character and wiki controllers
+    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:model];
     DTCWikiViewController *wikiVC = [[DTCWikiViewController alloc]initWithModel:model];
     
+    
+    // Creo el combinador
+    UITabBarController *tabVC = [[UITabBarController alloc]init];
+    tabVC.viewControllers = @[characterVC,wikiVC];
+    
     // Set controller as the root VC
-    self.window.rootViewController = wikiVC;
+    self.window.rootViewController = tabVC;
     
     
     // Override point for customization after application launch.

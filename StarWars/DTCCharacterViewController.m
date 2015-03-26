@@ -19,12 +19,18 @@
     if(self = [super initWithNibName:nil
                               bundle:nil]){
         _model = aModel;
+        // We must use self.title instead of _title because of restrictions
+        self.title = aModel.alias;
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    // Make sure the view not to use the whole screen when embeded in combinators
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     [self syncModelWithView];
 }
 
