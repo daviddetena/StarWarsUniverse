@@ -7,6 +7,7 @@
 //
 
 #import "DTCCharacterViewController.h"
+#import "DTCWikiViewController.h"
 
 @interface DTCCharacterViewController ()
 
@@ -45,10 +46,17 @@
 }
 
 #pragma mark - Actions
+// Play the character's sound
 - (IBAction)playSound:(id)sender{
     // Play the sound of the model
     self.player = [DTCAudioPlayer audioPlayer];
     [self.player playSoundData:self.model.soundData];
+}
+
+// Create a wikiVC and push it to the navigation controller
+- (IBAction)displayWiki:(id)sender{
+    DTCWikiViewController *wikiVC = [[DTCWikiViewController alloc]initWithModel:self.model];
+    [self.navigationController pushViewController:wikiVC animated:YES];
 }
 
 @end

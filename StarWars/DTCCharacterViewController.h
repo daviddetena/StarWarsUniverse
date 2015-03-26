@@ -23,7 +23,8 @@
 // Init Controller with a model
 - (id) initWithModel:(DTCStarWarsCharacter *) aModel;
 
-
+#pragma mark - Actions
 - (IBAction)playSound:(id)sender;
+- (IBAction)displayWiki:(id)sender;
 
 @end

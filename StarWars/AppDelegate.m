@@ -31,15 +31,14 @@
     
     // Create the character and wiki controllers
     DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:model];
-    DTCWikiViewController *wikiVC = [[DTCWikiViewController alloc]initWithModel:model];
+    //DTCWikiViewController *wikiVC = [[DTCWikiViewController alloc]initWithModel:model];
     
     
     // Creo el combinador
-    UITabBarController *tabVC = [[UITabBarController alloc]init];
-    tabVC.viewControllers = @[characterVC,wikiVC];
+    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:characterVC];
     
     // Set controller as the root VC
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
     
     
     // Override point for customization after application launch.
