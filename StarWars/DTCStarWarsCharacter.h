@@ -17,6 +17,7 @@
 @property (strong,nonatomic) NSURL *wikiURL;
 @property (strong,nonatomic) NSData *soundData;
 @property (strong,nonatomic) UIImage *photo;
+@property (strong,nonatomic) UIImage *icon;
 
 
 #pragma mark - Instance methods
@@ -26,13 +27,15 @@
               alias:(NSString*) alias
                 url:(NSURL *) wikiURL
           soundData:(NSData *) soundData
-              photo:(UIImage *)photo;
+              photo:(UIImage *)photo
+              icon:(UIImage *)icon;
 
 
 // Other init
 - (id) initWithAlias:(NSString*) alias
-                url:(NSURL *) wikiURL
-          soundData:(NSData *) soundData
-              photo:(UIImage *)photo;
+                 url:(NSURL *) wikiURL
+           soundData:(NSData *) soundData
+               photo:(UIImage *)photo
+                icon:(UIImage *)icon;
 
 @end

@@ -22,6 +22,7 @@
         _model = aModel;
         // We must use self.title instead of _title because of restrictions
         self.title = aModel.alias;
+        self.tabBarItem.image = aModel.icon;
     }
     return self;
 }
