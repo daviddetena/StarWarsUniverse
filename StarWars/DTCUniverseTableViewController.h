@@ -31,7 +31,8 @@
 
 @end
 
-@interface DTCUniverseTableViewController : UITableViewController
+// Auto-Delegate for managing the table on iPhones
+@interface DTCUniverseTableViewController : UITableViewController<DTCUniverseTableViewControllerDelegate>
 
 #pragma mark - Properties
 @property (strong,nonatomic) DTCStarWarsUniverse *model;

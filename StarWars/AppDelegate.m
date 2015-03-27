@@ -27,27 +27,17 @@
     // Create the models
     DTCStarWarsUniverse *universe = [[DTCStarWarsUniverse alloc]init];
     
-    // Create the controllers
-    DTCUniverseTableViewController *universeVC = [[DTCUniverseTableViewController alloc]initWithModel:universe style:UITableViewStylePlain];
     
-    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:[universeVC.model imperialAtIndex:0]];
+    // Detectamos el tipo de pantalla
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        // Tablet
+        [self configureForPadWithModel:universe];
+    }
+    else{
+        // iPhone
+        [self configureForPhoneWithModel:universe];
+    }
     
-    // Create the combiners
-    UINavigationController *universeNav = [[UINavigationController alloc]initWithRootViewController:universeVC];
-    UINavigationController *characterNav = [[UINavigationController alloc]initWithRootViewController:characterVC];
-    
-    UISplitViewController *splitVC = [[UISplitViewController alloc]init];
-    splitVC.viewControllers = @[universeNav,characterNav];
-    
-    // Set delegates
-    splitVC.delegate = characterVC;
-    universeVC.delegate = characterVC;
-        
-    // Set controller as the root VC
-    self.window.rootViewController = splitVC;
-    
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -72,6 +62,44 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Utils
+
+- (void) configureForPadWithModel: (DTCStarWarsUniverse *) model{
+    
+    // Create the controllers
+    DTCUniverseTableViewController *universeVC = [[DTCUniverseTableViewController alloc]initWithModel:model style:UITableViewStylePlain];
+    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:[universeVC.model imperialAtIndex:0]];
+    
+    // Create the combiners
+    UINavigationController *universeNav = [[UINavigationController alloc]initWithRootViewController:universeVC];
+    UINavigationController *characterNav = [[UINavigationController alloc]initWithRootViewController:characterVC];
+    
+    UISplitViewController *splitVC = [[UISplitViewController alloc]init];
+    splitVC.viewControllers = @[universeNav,characterNav];
+    
+    // Set delegates
+    splitVC.delegate = characterVC;
+    universeVC.delegate = characterVC;
+    
+    // Set controller as the root VC
+    self.window.rootViewController = splitVC;
+
+}
+
+- (void) configureForPhoneWithModel: (DTCStarWarsUniverse *) model{
+    // Create the controllers
+    DTCUniverseTableViewController *universeVC = [[DTCUniverseTableViewController alloc]initWithModel:model style:UITableViewStylePlain];
+    
+    // Create the combiners
+    UINavigationController *universeNav = [[UINavigationController alloc]initWithRootViewController:universeVC];
+    
+    // Set the Delegate
+    universeVC.delegate = universeVC;
+    
+    // Set controller as the root VC
+    self.window.rootViewController = universeNav;
 }
 
 @end

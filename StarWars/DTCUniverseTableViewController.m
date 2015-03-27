@@ -120,5 +120,14 @@
     return character;
 }
 
+#pragma mark - DTCUniverseTableViewControllerDelegate
+// Auto-delegate
+- (void) universeTableViewController:(DTCUniverseTableViewController *)universe
+                       didSelectBook:(DTCStarWarsCharacter *)character{
+    
+    DTCCharacterViewController *charVC = [[DTCCharacterViewController alloc]initWithModel:character];
+    [self.navigationController pushViewController:charVC animated:YES];
+}
+
 
 @end
