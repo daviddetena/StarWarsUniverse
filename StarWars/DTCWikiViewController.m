@@ -29,6 +29,12 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    // Suscribe to the Notification Center and keep observing for notifications with the notification name
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(characterDidChange:) name:CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME object:nil];
+    
+    
     // Make sure the view not to use the whole screen when embeded in combinators
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
@@ -41,7 +47,10 @@
 
 
 - (void) viewWillDisappear:(BOOL)animated{
-    // Unsuscribe from the Notification Center
+    [super viewWillDisappear:animated];
+    
+    //Unsuscribe from the Notification Center
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +91,17 @@ shouldStartLoadWithRequest:(NSURLRequest *) request
         return NO;
     }
     return YES;
+}
+
+#pragma mark - Notifications
+- (void) characterDidChange:(NSNotification *) notification{
+    // Receive the notification and extract the info
+    NSDictionary *dict = [notification userInfo];
+    DTCStarWarsCharacter *character = [dict objectForKey:CHARACTER_KEY];
+    
+    // Update the model and the url to show
+    self.model = character;
+    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiURL]];
 }
 
 @end

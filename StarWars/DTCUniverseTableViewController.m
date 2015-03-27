@@ -100,6 +100,10 @@
     }
     
     // Need notifications to tell the WikiVC the model has changed
+    // Send the wiki the notification with the new selected character as userInfo
+    NSNotification *notification = [NSNotification notificationWithName:CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME object:self userInfo:@{CHARACTER_KEY:character}];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 

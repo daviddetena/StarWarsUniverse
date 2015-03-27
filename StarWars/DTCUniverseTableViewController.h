@@ -13,6 +13,9 @@
 #define IMPERIAL_SECTION 0
 #define REBEL_SECTION 1
 
+#define CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME @"newCharacterWiki"
+#define CHARACTER_KEY @"character"
+
 // Forward declaration needed to define a protocol
 @class DTCUniverseTableViewController;
 
