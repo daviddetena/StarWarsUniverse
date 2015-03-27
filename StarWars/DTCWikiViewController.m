@@ -32,17 +32,17 @@
     
     // Suscribe to the Notification Center and keep observing for notifications with the notification name
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(characterDidChange:) name:CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME object:nil];
+    [center addObserver:self selector:@selector(notifyThatCharacterDidChange:) name:CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME object:nil];
     
     
     // Make sure the view not to use the whole screen when embeded in combinators
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    // Subscribe to the Notification Center
-    
+    [self syncWithModel];
+}
+
+- (void) viewDidAppear:(BOOL)animated{
     // Set delegate of browser
     self.browser.delegate = self;
-    [self syncWithView];
 }
 
 
@@ -58,7 +58,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) syncWithView{
+
+#pragma mark - Utils
+- (void) syncWithModel{
     // Make the activity indicator appear and start animating
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
@@ -94,14 +96,15 @@ shouldStartLoadWithRequest:(NSURLRequest *) request
 }
 
 #pragma mark - Notifications
-- (void) characterDidChange:(NSNotification *) notification{
+// CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME
+- (void) notifyThatCharacterDidChange:(NSNotification *) notification{
     // Receive the notification and extract the info
     NSDictionary *dict = [notification userInfo];
     DTCStarWarsCharacter *character = [dict objectForKey:CHARACTER_KEY];
     
     // Update the model and the url to show
     self.model = character;
-    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiURL]];
+    [self syncWithModel];
 }
 
 @end

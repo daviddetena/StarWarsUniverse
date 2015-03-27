@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DTCStarWarsCharacter.h"
-
-#define CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME @"newCharacterWiki"
-#define CHARACTER_KEY @"character"
+#import "DTCUniverseTableViewController.h"
 
 // This controller will be the delegate of UIWebViewController. With that, we can,
 // among other things, know when an url starts orr finishes loading
