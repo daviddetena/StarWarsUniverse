@@ -26,18 +26,26 @@
     return self;
 }
 
+#pragma mark - View Lifecycle
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
     // Make sure the view not to use the whole screen when embeded in combiners
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    // Sync model with view
     [self syncModelWithView];
+    
+    // Set left (or right) button item that shows or hides the table
+    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];    
 }
 
+
+#pragma mark - Memory
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -67,8 +75,7 @@
 - (void) splitViewController:(UISplitViewController *)svc
      willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
 
-    // Find out if the table is visible
-    
+    // Check out if the table is visible
     if (displayMode==UISplitViewControllerDisplayModePrimaryHidden) {
         // Table hidden => show button on the navigation
         self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;

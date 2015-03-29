@@ -8,6 +8,7 @@
 
 #import "DTCUniverseTableViewController.h"
 #import "DTCCharacterViewController.h"
+#import "Settings.h"
 
 @interface DTCUniverseTableViewController ()
 
@@ -104,6 +105,14 @@
     NSNotification *notification = [NSNotification notificationWithName:CHARACTER_SELECTED_WIKI_NOTIFICATION_NAME object:self userInfo:@{CHARACTER_KEY:character}];
     
     [[NSNotificationCenter defaultCenter] postNotification:notification];
+    
+    // Save current coordinates of last character
+    NSArray *coords = @[@(indexPath.section),@(indexPath.row)];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:coords
+                 forKey:LAST_SELECTED_CHARACTER];
+    [defaults synchronize];
+    
 }
 
 

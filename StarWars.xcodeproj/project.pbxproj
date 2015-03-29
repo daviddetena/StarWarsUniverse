@@ -109,6 +109,7 @@
 		59A5FBBD1AC444DE00346940 /* yoda_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoda_icon@2x.png"; sourceTree = "<group>"; };
 		59A5FBC81AC4516500346940 /* DTCStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCStarWarsUniverse.h; sourceTree = "<group>"; };
 		59A5FBC91AC4516500346940 /* DTCStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCStarWarsUniverse.m; sourceTree = "<group>"; };
+		59B1DDC51AC807CF0075EACB /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +228,7 @@
 				59A449C51AC2041100330D54 /* Images.xcassets */,
 				59A449C71AC2041100330D54 /* LaunchScreen.xib */,
 				59A449BE1AC2041100330D54 /* Supporting Files */,
+				59B1DDC51AC807CF0075EACB /* Settings.h */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";

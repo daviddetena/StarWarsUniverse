@@ -12,6 +12,7 @@
 #import "DTCWikiViewController.h"
 #import "DTCStarWarsUniverse.h"
 #import "DTCUniverseTableViewController.h"
+#import "Settings.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Default value for the last selected character
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // First launch
+    if(![defaults objectForKey:LAST_SELECTED_CHARACTER]){
+        // Save a default value: The first of imperial section
+        [defaults setObject:@[@(IMPERIAL_SECTION),@0] forKey:LAST_SELECTED_CHARACTER];
+        
+        // Save data manually
+        [defaults synchronize];
+    }
+    else{
+        
+    }
+    
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -70,7 +87,7 @@
     
     // Create the controllers
     DTCUniverseTableViewController *universeVC = [[DTCUniverseTableViewController alloc]initWithModel:model style:UITableViewStylePlain];
-    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:[universeVC.model imperialAtIndex:0]];
+    DTCCharacterViewController *characterVC = [[DTCCharacterViewController alloc]initWithModel:[self lastSelectedCharacterInModel:model]];
     
     // Create the combiners
     UINavigationController *universeNav = [[UINavigationController alloc]initWithRootViewController:universeVC];
@@ -100,6 +117,26 @@
     
     // Set controller as the root VC
     self.window.rootViewController = universeNav;
+}
+
+- (DTCStarWarsCharacter *) lastSelectedCharacterInModel: (DTCStarWarsUniverse *) universe{
+    // NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // Get the coordinates of the last character
+    NSArray *coords = [defaults objectForKey:LAST_SELECTED_CHARACTER];
+    NSUInteger section = [[coords objectAtIndex:0] integerValue];
+    NSUInteger pos = [[coords objectAtIndex:1] integerValue];
+
+    // Get the character for these coordinates
+    DTCStarWarsCharacter *character = nil;
+    if (section==IMPERIAL_SECTION) {
+        character = [universe imperialAtIndex:pos];
+    }
+    else{
+        character = [universe rebelAtIndex:pos];
+    }
+    return character;
 }
 
 @end

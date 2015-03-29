@@ -41,6 +41,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     // Set delegate of browser
     self.browser.delegate = self;
 }
