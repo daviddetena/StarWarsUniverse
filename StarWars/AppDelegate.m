@@ -34,9 +34,6 @@
         // Save data manually
         [defaults synchronize];
     }
-    else{
-        
-    }
     
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];

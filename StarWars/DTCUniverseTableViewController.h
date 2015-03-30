@@ -27,7 +27,7 @@
 @optional
 // Tell the delegate the character selected has changed
 - (void) universeTableViewController:(DTCUniverseTableViewController *) universe
-                       didSelectBook:(DTCStarWarsCharacter *) character;
+                       didSelectCharacter:(DTCStarWarsCharacter *) character;
 
 @end
 

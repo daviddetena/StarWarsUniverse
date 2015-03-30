@@ -88,7 +88,7 @@
 
 #pragma mark - DTCUniverseTableViewControllerDelegate
 - (void) universeTableViewController:(DTCUniverseTableViewController *)universe
-                       didSelectBook:(DTCStarWarsCharacter *)character{
+                       didSelectCharacter:(DTCStarWarsCharacter *)character{
     self.model = character;
     [self syncModelWithView];
 }

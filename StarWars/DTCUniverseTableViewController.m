@@ -96,8 +96,8 @@
     DTCStarWarsCharacter *character = [self characterAtIndexPath:indexPath];
     
     // Notify the delegate the model has changed (only if the delegate understands the message [implements it])
-    if([self.delegate respondsToSelector:@selector(universeTableViewController:didSelectBook:)]){
-        [self.delegate universeTableViewController:self didSelectBook:character];
+    if([self.delegate respondsToSelector:@selector(universeTableViewController:didSelectCharacter:)]){
+        [self.delegate universeTableViewController:self didSelectCharacter:character];
     }
     
     // Need notifications to tell the WikiVC the model has changed
